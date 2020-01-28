@@ -6,8 +6,8 @@ import './styles.css'
 // Y hacemos destructuring en la entrada de la función flecha
 const WeatherExtraInfo = ({ humidity, wind }) => (
     <div className="weatherExtraInfoCont">
-        <span>{`${humidity} % - `}</span>
-        <span>{`${wind} wind`}</span>
+        <span className="extraInfoText">{`${humidity} % - `}</span>
+        <span className="extraInfoText">{`${wind}`}</span>
     </div>
 )
 
