@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './styles.css';
 
 const Location = ({ city }) => {
 
     return (
         // Y lo meto dentro del JSX, dentro de llames...
-        <div>
+        <div className="locationCont">
             <h1>{city}</h1>
         </div>
     )
