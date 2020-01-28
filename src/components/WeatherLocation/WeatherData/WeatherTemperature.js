@@ -13,6 +13,7 @@ import {
     SNOW,
     WINDY,
 } from '../../../constants/weathers'
+import './styles.css'
 
 // Y actualizamos el diccionario:
 const icons = {
@@ -33,7 +34,7 @@ const geWeatherIcon = weatherState => {
 }
 
 const WeatherTemperature = ({ temperature, weatherState }) => (
-    <div>
+    <div className="weatherTemperatureCont">
         {
             geWeatherIcon(weatherState)
         }

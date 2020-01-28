@@ -12,11 +12,12 @@ import {
     SNOW,
     WINDY,
 } from '../../../constants/weathers' ;
+import './styles.css'
 
 
 // Ahora en weatherState ponemos directamente el nombre de la constante
 const WeatherData = () => (
-    <div>
+    <div className="weatherDataCont">
         <WeatherTemperature
             temperature={20}
             weatherState={RAIN} />
