@@ -3,8 +3,15 @@ import Location from './Location';
 import WeatherData from './WeatherData';
 import './styles.css';
 import {
-    SUN, WINDY,
+    SUN,
+    WINDY,
 } from '../../constants/weathers';
+
+const location = "Buenos Aires,ar";
+const api_key = "f99bbd9e4959b513e9bd0d7f7356b38d";
+const url_base_weather = "https://api.openweathermap.org/data/2.5/weather";
+
+const api_weathher = `${url_base_weather}?q=${location}&appid=${api_key}`;
 
 const data = {
     temperature: 5,
@@ -31,6 +38,7 @@ class WeatherLocation extends Component {
     }
 
     handleUpdateClick = () => {
+        fetch(api_weathher);
         console.log("actualizado");
 
         this.setState({
