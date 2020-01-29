@@ -3,12 +3,7 @@ import Location from './Location';
 import WeatherData from './WeatherData';
 import './styles.css';
 import {
-    CLOUD,
-    CLOUDY,
     SUN,
-    RAIN,
-    SNOW,
-    WINDY,
 } from '../../constants/weathers';
 
 const data = {

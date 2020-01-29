@@ -1,5 +1,5 @@
 // Importamos también Component
-import React, { Component } from 'react';
+import React from 'react';
 
 // Importamos el Functional Component
 import WeatherLocation from './components/WeatherLocation';
