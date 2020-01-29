@@ -41,8 +41,8 @@ const WeatherTemperature = ({ temperature, weatherState }) => (
         {
             geWeatherIcon(weatherState)
         }
-        <span className="temperature">{`${temperature} ºC `}</span>
-        <span className="temperatureType">{`ºC `}</span>
+        <span className="temperature">{`${temperature}`}</span>
+        <span className="temperatureType">{`Cº`}</span>
     </div>
 );
 
