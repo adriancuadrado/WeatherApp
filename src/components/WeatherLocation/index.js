@@ -38,7 +38,12 @@ class WeatherLocation extends Component {
     }
 
     handleUpdateClick = () => {
-        fetch(api_weathher);
+        fetch(api_weathher).then(resolve => {
+            return resolve.json();
+        }).then(data => {
+            console.log(data);
+            debugger;
+        });
         console.log("actualizado");
 
         this.setState({
