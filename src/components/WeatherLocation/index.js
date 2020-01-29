@@ -34,7 +34,6 @@ class WeatherLocation extends Component {
         console.log("actualizado");
 
         this.setState({
-            city: 'Buenos Aires!',
             data: data2,
         });
     }
