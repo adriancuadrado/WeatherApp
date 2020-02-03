@@ -7,22 +7,22 @@ import propTypes from 'prop-types'
 // Hacemos la importación como en WeatherData
 import {
     CLOUD,
-    CLOUDY,
     SUN,
     RAIN,
     SNOW,
-    WINDY,
+    THUNDER,
+    DRIZZLE,
 } from '../../../constants/weathers'
 import './styles.css'
 
 // Y actualizamos el diccionario:
 const icons = {
     [CLOUD]: "cloud",
-    [CLOUDY]: "cloudy",
     [SUN]: "day-sunny",
     [RAIN]: "rain",
     [SNOW]: "snow",
-    [WINDY]: "windy",
+    [THUNDER]: "day-thunderstore",
+    [DRIZZLE]: "day-showers",
 }
 
 const geWeatherIcon = weatherState => {
