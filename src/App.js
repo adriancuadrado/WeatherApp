@@ -4,7 +4,7 @@ import LocationList from './components/LocationList';
 
 const cities = [
     'Buenos Aires,ar',
-    'Washingtong,us',
+    'Washington,us',
     'Bogota,col',
     'Ciudad de México,mx',
     'Madrid,es',
