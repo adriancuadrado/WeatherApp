@@ -36,7 +36,7 @@ class App extends Component {
         this.setState({ city });
         console.log(`handleSelectedLocation ${city}`);
 
-        this.props.setCity(city);
+        this.props.setCity1(city);
     }
 
     render() {
@@ -76,10 +76,12 @@ class App extends Component {
     }
 }
 
-const mapDispatchToPropsActions = dispatch => ({
-    setCity: value => dispatch(setCity(value))
-});
+const mapDispatchToProps = dispatch => (
+    {
+        setCity1: value => dispatch(setCity(value))
+    }
+);
 
-const AppConnected = connect(null, mapDispatchToPropsActions)(App);
+const AppConnected = connect(null, mapDispatchToProps)(App);
 
 export default AppConnected;
