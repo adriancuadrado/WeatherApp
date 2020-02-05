@@ -22,7 +22,7 @@ class App extends Component {
     constructor() {
         super();
 
-        this.state = { city: 'Nueva Ciudad!'};
+        this.state = { city: null };
     }
 
     handleSelectedLocation = city => {
@@ -38,7 +38,7 @@ class App extends Component {
                 <Row>
                     <AppBar position='sticky'>
                         <Toolbar>
-                            <Typography variant='title' color='inherit'>
+                            <Typography variant='h5' color='inherit'>
                                 Weather App
                             </Typography>
                         </Toolbar>
@@ -51,9 +51,14 @@ class App extends Component {
                             onSelectedLocation={this.handleSelectedLocation}/>
                     </Col>
                     <Col xs={12} md={6}>
-                        <Paper zDepth={4}>
+                        <Paper elevation={4}>
                             <div className="details">
-                                <ForecastExtended city={city}></ForecastExtended>
+                                {
+                                    !city ?
+                                    <h1>No se seleccionó ciudad</h1> :
+                                    <ForecastExtended city={city}></ForecastExtended>
+                                }
+
                             </div>
                         </Paper>
                     </Col>
