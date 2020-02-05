@@ -5,11 +5,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Grid, Col, Row } from 'react-flexbox-grid';
+import PropTypes from 'prop-types';
 import './App.css';
 import LocationList from './components/LocationList';
 import ForecastExtended from './components/ForecastExtended';
 import { setCity } from './actions';
-import { store } from './store';
 
 const cities = [
     'Buenos Aires,ar',
@@ -36,7 +36,7 @@ class App extends Component {
         this.setState({ city });
         console.log(`handleSelectedLocation ${city}`);
 
-        this.props.setCity1(city);
+        this.props.setCity(city);
     }
 
     render() {
@@ -76,12 +76,12 @@ class App extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => (
-    {
-        setCity1: value => dispatch(setCity(value))
-    }
-);
+App.propTypes = {
+    setCity: PropTypes.func.isRequired,
+}
 
-const AppConnected = connect(null, mapDispatchToProps)(App);
+const mapDispatchToProps = dispatch => ({
+    setCity: value => dispatch(setCity(value))
+});
 
-export default AppConnected;
+export default connect(null, mapDispatchToProps)(App);
