@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import ForecastItem from './ForecastItem';
+import ForecastItem from './ForecastItem';
 import transformForecast from './../services/transformForecast';
 import './styles.css';
 
@@ -46,9 +46,14 @@ class ForecastExtended extends Component {
         );
     }
 
-    renderForecastItemDays() {
-        return <h1>Render Items</h1>;
-        // return days.map( day => (<ForecastItem weekDay={day} hour={10} data={data}></ForecastItem>));
+    renderForecastItemDays(forecastData) {
+        return forecastData.map( forecast => (
+            <ForecastItem
+                key={`${forecast.weekDay}${forecast.hour}`}
+                weekDay={forecast.weekDay}
+                hour={forecast.hour}
+                data={forecast.data}
+            ></ForecastItem>));
     }
 
     renderProgress = () => {
@@ -57,12 +62,12 @@ class ForecastExtended extends Component {
 
     render() {
         const { city } = this.props;
-        const { forecast } = this.state;
+        const { forecastData } = this.state;
         return (
             <div>
                 <h2 className='forecast-title'>Pronostico Extendido para {city}</h2>
-                {forecast ?
-                    this.renderForecastItemDays() :
+                {forecastData ?
+                    this.renderForecastItemDays(forecastData) :
                     this.renderProgress()}
             </div>
         );
