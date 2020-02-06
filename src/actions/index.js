@@ -51,24 +51,10 @@ export const setWeather = payload => {
             fetch(api_weather).then(resolve => {
                 return resolve.json();
             }).then(weather_data => {
-                const data = transformWeather(weather_data);
+                const weather = transformWeather(weather_data);
 
-                dispatch(setWeatherCity({city, data}));
+                dispatch(setWeatherCity({city, weather}));
             });
         });
     }
-    /* 
-    const api_key = "f99bbd9e4959b513e9bd0d7f7356b38d";
-    const url = "https://api.openweathermap.org/data/2.5/weather";
-    componentWillMount() {
-        const { city } = this.state;
-        const api_weather = `${url}?q=${city}&appid=${api_key}`;
-        fetch(api_weather).then(resolve => {
-            return resolve.json();
-        }).then(weather_data => {
-            const data = transformWeather(weather_data);
-            this.setState({ data });
-        });
-    }
-     */
 }
